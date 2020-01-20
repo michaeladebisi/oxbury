@@ -35,7 +35,7 @@ router.get("/api/beers/", (req, res) => {
         // do search here
         if (bname) {
           beers = beers.filter(b => {
-            return b.name.toLowerCase() == bname.toLowerCase();
+            return b.name.toLowerCase().includes(bname.toLowerCase());
           });
         }
         res.status(200).json(beers);
